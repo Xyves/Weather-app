@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/6941ee879c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>
+          <i></i>
+          <span class="weatherCity">Weather in Warsaw</span>
+          <span class="country"></span>
+        </h1>
+        <div class="header-wrapper">
+          <span class="temperature"><button>°C</button></span>
+          <div class="search-bar">
+            <form action="">
+              <input type="search" placeholder="Search city or country" />
+              <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+            <p class="current-time"></p>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <main>
+          <h2 id="city"></h2>
+          <div class="icon-container">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div id="side">
+            <p class="current-temp"></p>
+            <h3>
+              <p class="min-temp"></p>
+              <p class="max-temp"></p>
+            </h3>
+            <h4 id="description"></h4>
+          </div>
+        </main>
+        <section class="weather-forecast">
+          <div></div>
+          <div></div>
+          <div></div>
+        </section>
+      </div>
+    </div>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
