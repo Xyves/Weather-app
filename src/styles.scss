@@ -1,3 +1,4 @@
+$dark-background: #131516;
 *,
 *::after,
 *::before {
@@ -15,17 +16,22 @@ body {
   width: 100%;
 }
 header {
+  color: white;
   display: flex;
   width: 100%;
-  height: 8vh;
-  background-color: blue;
+  height: 11vh;
+  background-color: $dark-background;
   justify-content: space-around;
   align-items: center;
   padding: 15px;
-  .temperature > button {
-    padding: 3px;
-    border-radius: 7px;
+  h1 {
+    font-size: 2rem;
+  }
+  .temperature {
+    padding: 4px 5px;
+    border-radius: 6px;
     text-align: center;
+    background-color: #8c969c;
   }
   .header-wrapper {
     margin-left: auto;
@@ -34,19 +40,26 @@ header {
   }
   .search-bar {
     display: inline-block;
-    background-color: red;
+    background-color: #43484b;
     border-radius: 7px;
     max-width: 80%;
+    min-width: 40%;
     input {
       background-color: transparent;
       border: none;
       padding: 4px;
-      max-width: 80%;
+      max-width: 85%;
+    }
+    input:focus,
+    input:active {
+      border: none;
+      outline: none;
     }
     button {
       border: none;
-      background-color: inherit;
       padding: 3px;
+      background: inherit;
+      cursor: pointer;
     }
   }
 }

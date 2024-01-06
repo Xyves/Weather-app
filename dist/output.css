@@ -18,18 +18,23 @@ body {
 }
 
 header {
+  color: white;
   display: flex;
   width: 100%;
-  height: 8vh;
-  background-color: blue;
+  height: 11vh;
+  background-color: #131516;
   justify-content: space-around;
   align-items: center;
   padding: 15px;
 }
-header .temperature > button {
-  padding: 3px;
-  border-radius: 7px;
+header h1 {
+  font-size: 2rem;
+}
+header .temperature {
+  padding: 4px 5px;
+  border-radius: 6px;
   text-align: center;
+  background-color: #8c969c;
 }
 header .header-wrapper {
   margin-left: auto;
@@ -38,20 +43,27 @@ header .header-wrapper {
 }
 header .search-bar {
   display: inline-block;
-  background-color: red;
+  background-color: #43484b;
   border-radius: 7px;
   max-width: 80%;
+  min-width: 40%;
 }
 header .search-bar input {
   background-color: transparent;
   border: none;
   padding: 4px;
-  max-width: 80%;
+  max-width: 85%;
+}
+header .search-bar input:focus,
+header .search-bar input:active {
+  border: none;
+  outline: none;
 }
 header .search-bar button {
   border: none;
-  background-color: inherit;
   padding: 3px;
+  background: inherit;
+  cursor: pointer;
 }
 
 .container {
