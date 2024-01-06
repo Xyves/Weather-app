@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("// import \"./styles.scss\";\r\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("// import \"./styles.scss\";\r\n\r\n// fetch(\"https://api.pexels.com/v1/search?query=weather\", {\r\n//   method: \"GET\",\r\n//   headers: {\r\n//     Authorization: ZPkwlkus8Y2GdSSIcOIv1g1c9m7hItHsfLKAZw7GbCztE2GyCt4BgJDB,\r\n//   },\r\n// }).then((response) => {\r\n//   return response.json();\r\n// });\r\n\r\n// EVkJtMOcaOSUvgG59UxLs6UJpjxJPkwEHADa0ASXdkA\r\nconsole.log(temperatureButton);\r\nconst temperatureButton = document.querySelector(\".temperature\");\r\n\r\ntemperatureButton.addEventListener(\"click\", () => {\r\n  console.log(\"wow\");\r\n});\r\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 
