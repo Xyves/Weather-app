@@ -7,7 +7,7 @@ $dark-background: #131516;
 }
 body {
   width: 100%;
-  height: 100%;
+  height: 92vh;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@ header {
   color: white;
   display: flex;
   width: 100%;
-  height: 11vh;
+  height: 8vh;
   background-color: $dark-background;
   justify-content: space-around;
   align-items: center;
@@ -64,9 +64,15 @@ header {
   }
 }
 .container {
-  display: flex;
-  width: 85%;
-  background-color: red;
+  height: 100%;
+  background: url("https://images.pexels.com/photos/772803/pexels-photo-772803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.wrapper {
+  height: 100%;
 }
 
 header {
