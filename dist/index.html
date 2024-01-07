@@ -21,7 +21,7 @@
         <div class="header-wrapper">
           <button class="temperature"><span>°C</span></button>
           <div class="search-bar">
-            <form action="">
+            <form action="" id="form">
               <input
                 type="search"
                 placeholder="Search city or country"
@@ -36,23 +36,24 @@
         </div>
       </header>
       <div class="container">
-        <main>
-          <h2 id="city"></h2>
-
-          <div id="side">
-            <p class="current-temp"></p>
-            <h3>
-              <p class="min-temp"></p>
-              <p class="max-temp"></p>
-            </h3>
-            <h4 id="description"></h4>
-          </div>
-        </main>
-        <section class="weather-forecast">
-          <div></div>
-          <div></div>
-          <div></div>
-        </section>
+        <div class="wrapper">
+          <main>
+            <h2 id="city"></h2>
+            <div id="side">
+              <p class="current-temp"></p>
+              <h3>
+                <p class="min-temp"></p>
+                <p class="max-temp"></p>
+              </h3>
+              <h4 id="description"></h4>
+            </div>
+          </main>
+          <section class="weather-forecast">
+            <div></div>
+            <div></div>
+            <div></div>
+          </section>
+        </div>
       </div>
     </div>
   </body>
