@@ -1,16 +1,22 @@
 $dark-background: #131516;
+$background-color: rgb(0 0 0 / 0.5);
 *,
 *::after,
 *::before {
   box-sizing: border-box;
   margin: 0;
 }
+html,
+body {
+  height: 100%;
+}
 body {
   width: 100%;
-  height: 92vh;
+  height: 100vh;
   padding: 0;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 .app {
   width: 100%;
@@ -19,13 +25,17 @@ header {
   color: white;
   display: flex;
   width: 100%;
-  height: 8vh;
+  height: 9vh;
   background-color: $dark-background;
   justify-content: space-around;
   align-items: center;
   padding: 15px;
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+  #currentDate {
+    margin-right: 2rem;
   }
   .temperature {
     padding: 4px 5px;
@@ -45,7 +55,7 @@ header {
     max-width: 80%;
     min-width: 40%;
     input {
-      background-color: transparent;
+      background-color: transparent !important;
       border: none;
       padding: 4px;
       max-width: 85%;
@@ -65,19 +75,40 @@ header {
 }
 .container {
   height: 100%;
-  background: url("https://images.pexels.com/photos/772803/pexels-photo-772803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-color: adjust-hue($color: #000000, $degrees: 355);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-}
+  .wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  main {
+    background-color: $background-color;
+    color: white;
+    width: 300px;
+    height: 250px;
+    margin-left: 50px;
+    font-size: 1.4rem;
+    #city-main {
+      text-align: center;
+      font-size: 3rem;
+      height: 70px;
+      color: rgb(243, 243, 243);
+    }
 
-.wrapper {
-  height: 100%;
-}
+    .side {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      flex-wrap: wrap;
 
-header {
-}
-main {
-}
-weather-forecast {
+      .img-container {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+      }
+    }
+  }
 }
