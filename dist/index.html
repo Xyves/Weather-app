@@ -19,15 +19,18 @@
           <span class="weatherCity">Weather in Warsaw</span>
         </h1>
         <div class="header-wrapper">
+          <span id="currentDate"></span>
+
           <button class="temperature"><span>°C</span></button>
           <div class="search-bar">
-            <form action="" id="form">
+            <form action="" id="form" method="GET">
               <input
                 type="search"
                 placeholder="Search city or country"
                 id="searchInput"
+                name="search-query"
               />
-              <button>
+              <button type="submit">
                 <i class="fa-solid fa-magnifying-glass searchButton"></i>
               </button>
             </form>
@@ -38,14 +41,21 @@
       <div class="container">
         <div class="wrapper">
           <main>
-            <h2 id="city"></h2>
-            <div id="side">
-              <p class="current-temp"></p>
-              <h3>
+            <h2 id="city-main">Warsaw</h2>
+            <div class="side">
+              <div class="weather-icon">
+                <div class="img-container">
+                  <img />
+                </div>
+              </div>
+              <div class="side-temp">
+                <p class="current-temp"></p>
+
                 <p class="min-temp"></p>
                 <p class="max-temp"></p>
-              </h3>
-              <h4 id="description"></h4>
+                <p class="wind-speed"></p>
+                <h4 id="description"></h4>
+              </div>
             </div>
           </main>
           <section class="weather-forecast">
