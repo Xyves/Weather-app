@@ -64,12 +64,13 @@ form.addEventListener("submit", (e) => {
 temperatureButton.addEventListener("click", () => {
   console.log("wow");
   const tempSpan = document.querySelector(".temperature span");
+
   if (tempSpan.textContent === "°C") {
     tempSpan.textContent = "°F";
   } else {
     tempSpan.textContent = "°C";
-    tempSpan.value = "Celsius";
   }
+  changeDegrees();
 });
 
 function getCurrentLocation(position) {
@@ -110,7 +111,7 @@ function changeCityTitle(address, addressWeather) {
   }
 }
 function changeCityApi(value) {
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=2716ab9a745c4b01a4f101708240201&q=${value}&days=5`;
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=2716ab9a745c4b01a4f101708240201&q=${value}&days=6`;
   return fetch(url)
     .then((response) => {
       return response.json();
@@ -132,40 +133,186 @@ function setBackground(images, number) {
   container.style.backgroundSize = "cover";
 }
 function changeWeather(obj) {
-  const minTempTodayC = obj.forecast.forecastday[0].day.mintemp_c;
-  const maxTempTodayC = obj.forecast.forecastday[0].day.maxtemp_c;
-  const minTempTodayF = obj.forecast.forecastday[0].day.mintemp_f;
-  const maxTempTodayF = obj.forecast.forecastday[0].day.maxtemp_f;
-  const condition = obj.current.condition.text;
-  let imgSrc = obj.current.condition.icon;
-  imgSrc = imgSrc.replace("64x64", "128x128");
-  const currentDate = format(new Date(), "dd/MM/yyyy");
-  const tempC = obj.current.temp_c;
-  const tempF = obj.current.temp_f;
-  const windKph = obj.current.wind_kph;
-  //  Change dom
   let currentTemp = document.querySelector(".current-temp");
   const minTempEl = document.querySelector(".min-temp");
   const maxTempEl = document.querySelector(".max-temp");
   const windSpeed = document.querySelector(".wind-speed");
   const description = document.querySelector("#description");
-  let weatherIcon = document.querySelector(".weather-icon img");
+  let weatherIcon = document.querySelector(".weather-icon");
   const celsius = "°C";
   const temperatureButtonText =
     temperatureButton.querySelector("span").textContent;
-  if (temperatureButtonText === celsius) {
-    currentTemp.textContent = tempC;
-    minTempEl.textContent = minTempTodayC;
-    maxTempEl.textContent = maxTempTodayC;
-  } else {
-    currentTemp.textContent = tempF;
-    minTempEl.textContent = minTempTodayF;
-    maxTempEl.textContent = maxTempTodayF;
+  let imageSrc = obj.current.condition.icon;
+  const weatherObj = {
+    today: {
+      tempC: obj.current.temp_c,
+      tempF: obj.current.temp_f,
+      minTempTodayC: obj.forecast.forecastday[0].day.mintemp_c,
+      maxTempTodayC: obj.forecast.forecastday[0].day.maxtemp_c,
+      minTempTodayF: obj.forecast.forecastday[0].day.mintemp_f,
+      maxTempTodayF: obj.forecast.forecastday[0].day.maxtemp_f,
+      condition: obj.current.condition.text,
+      src: obj.current.condition.icon.replace("64x64", "128x128"),
+      windKph: obj.current.wind_kph,
+      currentDate: format(new Date(), "dd/MM/yyyy"),
+    },
+    day1: {
+      minTempTodayC: obj.forecast.forecastday[1].day.mintemp_c,
+      maxTempTodayC: obj.forecast.forecastday[1].day.maxtemp_c,
+      minTempTodayF: obj.forecast.forecastday[1].day.mintemp_f,
+      maxTempTodayF: obj.forecast.forecastday[1].day.maxtemp_f,
+      src: obj.forecast.forecastday[1].day.condition.icon.replace(
+        "64x64",
+        "128x128"
+      ),
+      date: format(
+        new Date(new Date().setDate(new Date().getDate() + 1)),
+        "dd/MM/yyyy"
+      ),
+      condition: obj.forecast.forecastday[1].day.condition.text,
+    },
+    day2: {
+      minTempTodayC: obj.forecast.forecastday[2].day.mintemp_c,
+      maxTempTodayC: obj.forecast.forecastday[2].day.maxtemp_c,
+      minTempTodayF: obj.forecast.forecastday[2].day.mintemp_f,
+      maxTempTodayF: obj.forecast.forecastday[2].day.maxtemp_f,
+      src: obj.forecast.forecastday[2].day.condition.icon.replace(
+        "64x64",
+        "128x128"
+      ),
+      date: format(
+        new Date(new Date().setDate(new Date().getDate() + 2)),
+        "dd/MM/yyyy"
+      ),
+      condition: obj.forecast.forecastday[2].day.condition.text,
+    },
+    day3: {
+      minTempTodayC: obj.forecast.forecastday[3].day.mintemp_c,
+      maxTempTodayC: obj.forecast.forecastday[3].day.maxtemp_c,
+      minTempTodayF: obj.forecast.forecastday[3].day.mintemp_f,
+      maxTempTodayF: obj.forecast.forecastday[3].day.maxtemp_f,
+      src: obj.forecast.forecastday[3].day.condition.icon.replace(
+        "64x64",
+        "128x128"
+      ),
+      date: format(
+        new Date(new Date().setDate(new Date().getDate() + 3)),
+        "dd/MM/yyyy"
+      ),
+      condition: obj.forecast.forecastday[3].day.condition.text,
+    },
+    day4: {
+      minTempTodayC: obj.forecast.forecastday[4].day.mintemp_c,
+      maxTempTodayC: obj.forecast.forecastday[4].day.maxtemp_c,
+      minTempTodayF: obj.forecast.forecastday[4].day.mintemp_f,
+      maxTempTodayF: obj.forecast.forecastday[4].day.maxtemp_f,
+      src: obj.forecast.forecastday[4].day.condition.icon.replace(
+        "64x64",
+        "128x128"
+      ),
+      date: format(
+        new Date(new Date().setDate(new Date().getDate() + 4)),
+        "dd/MM/yyyy"
+      ),
+      condition: obj.forecast.forecastday[4].day.condition.text,
+    },
+    day5: {
+      minTempTodayC: obj.forecast.forecastday[5].day.mintemp_c,
+      maxTempTodayC: obj.forecast.forecastday[5].day.maxtemp_c,
+      minTempTodayF: obj.forecast.forecastday[5].day.mintemp_f,
+      maxTempTodayF: obj.forecast.forecastday[5].day.maxtemp_f,
+      src: obj.forecast.forecastday[5].day.condition.icon.replace(
+        "64x64",
+        "128x128"
+      ),
+      date: format(
+        new Date(new Date().setDate(new Date().getDate() + 5)),
+        "dd/MM/yyyy"
+      ),
+      condition: obj.forecast.forecastday[5].day.condition.text,
+    },
+  };
+
+  //  Manipulate dom
+  const dateList = document.querySelectorAll(".date");
+  const conditionList = document.querySelectorAll(".condition");
+  const iconList = document.querySelectorAll(".conditionIcon");
+  const maxTempElements = document.querySelectorAll(".warm");
+  const minTempElements = document.querySelectorAll(".cool");
+  const farenheit = "°F";
+  // Loop over every day
+  for (let i = 1; i < 6; i++) {
+    const index = Object.values(weatherObj);
+    const condition = index[i].condition;
+    const Imgsrc = index[i].src;
+    const minTempFutureC = index[i].minTempTodayC;
+    const minTempFutureF = index[i].minTempTodayF;
+    const maxtempFutureC = index[i].maxTempTodayC;
+    const maxtempFutureF = index[i].maxTempTodayF;
+    const date = index[i].date;
+
+    // Loop over every div element
+    for (let j = 0; j < dateList.length; j++) {
+      if (i - 1 === j) {
+        dateList[j].textContent = date;
+        console.log(iconList[j]);
+        iconList[j].src = Imgsrc;
+        conditionList[j].textContent = condition;
+        if (temperatureButtonText === celsius) {
+          maxTempElements[j].textContent = maxtempFutureC + celsius;
+          minTempElements[j].textContent = minTempFutureC + celsius;
+        } else {
+          maxTempElements[j].textContent = maxtempFutureF + farenheit;
+          minTempElements[j].textContent = minTempFutureF + farenheit;
+        }
+      }
+    }
   }
-  windSpeed.textContent = windKph + "km/h";
-  description.textContent = condition;
-  console.log(imgSrc);
-  console.log(weatherIcon);
-  weatherIcon.src = imgSrc;
-  dateText.textContent = currentDate;
+  if (temperatureButtonText === celsius) {
+    currentTemp.textContent = weatherObj.today.tempC + celsius;
+    minTempEl.textContent = weatherObj.today.minTempTodayC + celsius;
+    maxTempEl.textContent = weatherObj.today.maxTempTodayC + celsius;
+    console.log(weatherObj.today.tempC);
+  } else {
+    currentTemp.textContent = weatherObj.today.tempF + farenheit;
+    minTempEl.textContent = weatherObj.today.minTempTodayF + farenheit;
+    maxTempEl.textContent = weatherObj.today.maxTempTodayF + farenheit;
+  }
+  windSpeed.textContent = weatherObj.today.windKph + "km/h";
+  description.textContent = weatherObj.today.condition;
+  weatherIcon.src = imageSrc;
+  dateText.textContent = weatherObj.today.currentDate;
+}
+function changeDegrees() {
+  const tempSpan = document.querySelector(".temperature span");
+  const celsius = "°C";
+  const farenheit = "°F";
+  let currentTemp = document.querySelector(".current-temp");
+  const minTempEl = document.querySelector(".min-temp");
+  const maxTempEl = document.querySelector(".max-temp");
+  const windSpeed = document.querySelector(".wind-speed");
+  const description = document.querySelector("#description");
+  function toCelsius(fahrenheit) {
+    return ((fahrenheit - 32) * 5) / 9;
+  }
+
+  function toFahrenheit(celsius) {
+    return (celsius * 9) / 5 + 32;
+  }
+
+  let currTempNum = parseFloat(
+    currentTemp.textContent.replace(/[^0-9.-]/g, "")
+  );
+  let minTempNum = parseFloat(minTempEl.textContent.replace(/[^0-9.-]/g, ""));
+  let maxTempNum = parseFloat(maxTempEl.textContent.replace(/[^0-9.-]/g, ""));
+
+  if (tempSpan.textContent === "°C") {
+    currentTemp.textContent = toCelsius(currTempNum).toFixed(2) + celsius;
+    minTempEl.textContent = toCelsius(minTempNum).toFixed(2) + celsius;
+    maxTempEl.textContent = toCelsius(maxTempNum).toFixed(2) + celsius;
+  } else {
+    currentTemp.textContent = toFahrenheit(currTempNum).toFixed(2) + farenheit;
+    minTempEl.textContent = toFahrenheit(minTempNum).toFixed(2) + farenheit;
+    maxTempEl.textContent = toFahrenheit(maxTempNum).toFixed(2) + farenheit;
+  }
 }
