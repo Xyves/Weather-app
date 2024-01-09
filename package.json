@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "serve": "webpack serve",
-    "build:watch": "webpack --watch",
+    "watch:build": "webpack --watch",
     "watch:scss": "sass --watch src/styles.scss:dist/output.css"
   },
   "keywords": [],
