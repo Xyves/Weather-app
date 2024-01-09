@@ -11,6 +11,7 @@ body {
   height: 100%;
 }
 body {
+  color: white;
   width: 100%;
   height: 100vh;
   padding: 0;
@@ -83,19 +84,76 @@ header {
     display: flex;
     align-items: center;
     height: 100%;
+    .weather-forecast {
+      color: white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      .conditionIcon {
+        width: 64px;
+        height: 64px;
+      }
+    }
+    .weather-forecast > div {
+      width: 112px;
+      height: 344px;
+      background-color: $background-color;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-radius: 12px;
+      backdrop-filter: blur(2px);
+      .weatherData {
+        width: 100%;
+        height: 40%;
+        margin-bottom: 20px;
+      }
+      .warm {
+        color: #ffe47a !important;
+      }
+      .cool {
+        color: #3d7eaa;
+      }
+      .gradientHolder {
+        width: 15px;
+        height: 130px;
+
+        .custom-gradient {
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            180deg,
+            rgba(253, 32, 29, 0.8015581232492998) 2%,
+            rgba(252, 188, 69, 1) 4%,
+            rgba(33, 93, 105, 1) 61%,
+            rgba(9, 9, 121, 1) 99%
+          );
+          border-radius: 15px;
+        }
+      }
+    }
   }
   main {
     background-color: $background-color;
     color: white;
-    width: 300px;
+    width: 350px;
     height: 250px;
     margin-left: 50px;
     font-size: 1.4rem;
-    #city-main {
-      text-align: center;
-      font-size: 3rem;
-      height: 70px;
-      color: rgb(243, 243, 243);
+    backdrop-filter: blur(2px);
+    .headerToday {
+      display: inline-block;
+      width: 100%;
+      #city-main {
+        text-align: center;
+        font-size: 1rem;
+        height: 70px;
+        color: rgb(243, 243, 243);
+      }
     }
 
     .side {
@@ -103,7 +161,11 @@ header {
       flex-direction: column;
       height: 100%;
       flex-wrap: wrap;
-
+      .weather-icon {
+        display: inline-block;
+        // height: 100%;
+        // width: 70px;
+      }
       .img-container {
         display: flex;
         align-items: center;
