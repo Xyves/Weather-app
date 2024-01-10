@@ -1,19 +1,30 @@
-# Installation
-1. To set up the WeatherWise Application locally, follow these steps:
+## Installation
 
-2. Clone the GitHub repository to your local machine:
+To set up the Application locally, follow these steps:
 
-3. git clone https://github.com/0xabdulkhalid/weatherwise.git
-4. Navigate to the project's directory:
-   
-``cd weatherwise``
+1. Clone the GitHub repository to your local machine:
 
-5.Install the project's dependencies using npm:
+   ```bash
+   git clone https://github.com/Xyves/Weather-app.git
+   ```
 
-``npm install``
+2. Navigate to the project's directory:
 
-6. Build the project to bundle JavaScript, minify HTML and CSS, and move images:
+   ```bash
+   cd weatherwise
+   ```
 
-``npm run build``
+3. Install the project's dependencies using npm:
 
-The build files can be found on dist (distribution) directory.
+   ```bash
+   npm install
+   ```
+
+4. Build the project to bundle JavaScript:
+
+   ```bash
+   npm run build
+   ```
+5. The build files can be found on `dist` (distribution) directory.
+
+<br>
