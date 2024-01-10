@@ -6,14 +6,14 @@
 3. git clone https://github.com/0xabdulkhalid/weatherwise.git
 4. Navigate to the project's directory:
    
-cd weatherwise
+``cd weatherwise``
 
 5.Install the project's dependencies using npm:
 
-npm install
+``npm install``
 
 6. Build the project to bundle JavaScript, minify HTML and CSS, and move images:
 
-npm run build
+``npm run build``
 
 The build files can be found on dist (distribution) directory.
