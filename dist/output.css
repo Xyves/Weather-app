@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;1,100;1,700;1,800&family=Pacifico&display=swap");
 *,
 *::after,
 *::before {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 html,
@@ -13,11 +15,10 @@ body {
 body {
   color: white;
   width: 100%;
-  height: 100vh;
-  padding: 0;
   display: flex;
   justify-content: center;
   overflow: hidden;
+  font-family: "DM Sans", sans-serif;
 }
 
 .app {
@@ -35,17 +36,25 @@ header {
   padding: 15px;
 }
 header h1 {
-  font-size: 1.5rem;
   letter-spacing: 2px;
+  padding: 5px;
 }
-header #currentDate {
+header #currentDate,
+header h1 {
   margin-right: 2rem;
+  font-size: 1.2rem;
 }
 header .temperature {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0.1px solid gray;
+  border-radius: 7px;
   padding: 4px 5px;
-  border-radius: 6px;
-  text-align: center;
-  background-color: #8c969c;
+  margin-right: 0.5rem;
+}
+header .temperature:hover {
+  transform: scale(1.1);
+  background-color: rgba(56, 56, 56, 0.4);
 }
 header .header-wrapper {
   margin-left: auto;
@@ -60,6 +69,7 @@ header .search-bar {
   min-width: 40%;
 }
 header .search-bar input {
+  color: white;
   background-color: transparent !important;
   border: none;
   padding: 4px;
@@ -102,6 +112,10 @@ header .search-bar button {
   width: 64px;
   height: 64px;
 }
+.container .wrapper .weather-forecast > div:hover {
+  transform: scale(1.05);
+  user-select: none;
+}
 .container .wrapper .weather-forecast > div {
   width: 112px;
   height: 344px;
@@ -112,6 +126,7 @@ header .search-bar button {
   text-align: center;
   border-radius: 12px;
   backdrop-filter: blur(2px);
+  border: 0.5px solid black;
 }
 .container .wrapper .weather-forecast > div .weatherData {
   width: 100%;
@@ -136,36 +151,60 @@ header .search-bar button {
 }
 .container main {
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  width: 350px;
-  height: 250px;
-  margin-left: 50px;
+  margin-left: 5rem;
   font-size: 1.4rem;
   backdrop-filter: blur(2px);
 }
 .container main .headerToday {
-  display: inline-block;
-  width: 100%;
-}
-.container main .headerToday #city-main {
-  text-align: center;
-  font-size: 1rem;
-  height: 70px;
-  color: rgb(243, 243, 243);
-}
-.container main .side {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  flex-wrap: wrap;
-}
-.container main .side .weather-icon {
-  display: inline-block;
-}
-.container main .side .img-container {
   display: flex;
   align-items: center;
-  margin: 0 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.container main .headerToday .icon-container {
+  margin-left: 10px;
+}
+.container main .headerToday #description {
+  font-size: 1rem;
+  margin-top: -12px;
+}
+.container main .headerToday #city-main {
+  font-size: 1.5rem;
+  color: rgb(243, 243, 243);
+  margin: 0 30px 0 10px;
+  font-size: 3rem;
+  white-space: nowrap;
+}
+.container main .side {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+}
+.container main .side .weather-info span {
+  font-size: 13px;
+  font-weight: lighter;
+  white-space: nowrap;
+}
+.container main .side .weather-info p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 0 7px 0;
+}
+.container main .side > * {
+  width: 100%;
+  font-size: 20px;
+  padding: 5px;
+  border: 0.2px solid black;
+  text-align: center;
+}
+.container main:hover {
+  transform: scale(1.05);
+}
+
+img:hover {
+  transform: rotate(360deg);
+  transition: transform 1s ease;
 }
 
 /*# sourceMappingURL=output.css.map */
