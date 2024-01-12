@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <script
+      src="https://kit.fontawesome.com/6941ee879c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="bundle.js"></script>
+    <title>Weather app</title>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>
+          <i class="fa-solid fa-location-dot"></i>
+          <span class="weatherCity"></span>
+        </h1>
+        <div class="header-wrapper">
+          <span id="currentDate"></span>
+          <button class="temperature"><span>°C</span></button>
+          <div class="search-bar">
+            <form action="" id="form" method="GET">
+              <input
+                type="search"
+                placeholder="Search city or country"
+                id="searchInput"
+                name="search-query"
+              />
+              <button type="submit">
+                <i class="fa-solid fa-magnifying-glass searchButton"></i>
+              </button>
+            </form>
+            <p class="current-time"></p>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <div class="wrapper">
+          <main>
+            <div class="headerToday">
+              <div class="icon-container">
+              <img class="weather-icon" />
+              <h4 id="description"></h4>
+            </div>
+              <h3 id="city-main"></h3>
+            </div>
+            <div class="side">
+              <div class="weather-info">
+                <span>Current Temperature</span>
+                <p class="current-temp"></p>
+              </div>
+              <div class="weather-info">
+                <span>Temperature Range</span>
+                <p class="minmax-temp"></p>
+              </div>
+              <div class="weather-info">
+                <span>Feels like</span>
+                <h4 class="tempFeel"></h4>
+              </div>
+              <div class="weather-info">
+                <span>Wind</span>
+                <p class="wind-speed"></p>
+              </div>
+              <div class="weather-info">
+                <span>Humidity</span>
+                <p class="humidity"></p>
+              </div>
+              <div class="weather-info">
+                <span>Cloud Cover</span>
+                <p class="cloud-cover"></p>
+              </div>
+            </div>
+          </main>
+          <section class="weather-forecast">
+            <div id="day1">
+              <div class="weatherData">
+              <div class="date"></div>
+             <img class="conditionIcon"></i>
+              <div class="condition"></div>
+              </div>
+              <p class="warm"></p>
+              <div class="gradientHolder"><div class="custom-gradient"></div></div>
+              <p class="cool"></p>
+            </div>
+            <div id="day2">
+              <div class="weatherData">
+              <div class="date"></div>
+             <img class="conditionIcon">
+              <div class="condition"></div>
+              </div>
+              <p class="warm"></p>
+              <div class="gradientHolder"><div class="custom-gradient"></div></div>
+              <p class="cool"></p>
+            </div>
+            <div id="day3">
+              <div class="weatherData">
+              <div class="date"></div>
+             <img class="conditionIcon">
+              <div class="condition"></div>
+              </div>
+              <p class="warm"></p>
+              <div class="gradientHolder"><div class="custom-gradient"></div></div>
+              <p class="cool"></p>
+            </div>
+            <div id="day4">
+              <div class="weatherData">
+              <div class="date"></div>
+             <img class="conditionIcon">
+              <div class="condition"></div>
+              </div>
+              <p class="warm"></p>
+              <div class="gradientHolder"><div class="custom-gradient"></div></div>
+              <p class="cool"></p>
+            </div>
+            <div id="day5">
+              <div class="weatherData">
+              <div class="date"></div>
+             <img class="conditionIcon"/>
+              <div class="condition"></div>
+              </div>
+              <p class="warm"></p>
+              <div class="gradientHolder"><div class="custom-gradient"></div></div>
+              <p class="cool"></p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
