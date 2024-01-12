@@ -9,12 +9,14 @@
     "serve": "webpack serve",
     "watch:build": "webpack --watch",
     "watch:scss": "sass --watch src/styles.scss:dist/output.css",
-    "start": "webpack serve && webpack --watch && sass --watch src/styles.scss:dist/output.css"
+    "start": "webpack serve && webpack --watch && sass --watch src/styles.scss:dist/output.css",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "html-loader": "^4.2.0",
     "sass": "^1.69.7",
     "webpack": "^5.89.0",
