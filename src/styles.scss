@@ -186,7 +186,7 @@ header {
       text-align: center;
       background-color: $header-background-color;
       border-radius: 25px 25px 0 0;
-
+      height: 20%;
       .icon-container {
         margin-left: 10px;
       }
@@ -208,8 +208,7 @@ header {
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: 1fr 1fr;
       border: 1px solid black;
-      height: 81%;
-
+      height: 80%;
       .weather-info span {
         font-size: 15px;
         font-weight: lighter;
