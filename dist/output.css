@@ -103,6 +103,7 @@ header .search-bar button {
 .container .wrapper {
   display: flex;
   align-items: center;
+  margin-left: auto;
   height: 100%;
 }
 .container .wrapper .weather-forecast {
@@ -110,9 +111,9 @@ header .search-bar button {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 25px;
+  margin-left: 5rem;
 }
 .container .wrapper .weather-forecast .conditionIcon {
   width: 64px;
@@ -124,7 +125,7 @@ header .search-bar button {
 }
 .container .wrapper .weather-forecast > div {
   width: 10%;
-  min-height: 47%;
+  height: 47%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -143,13 +144,15 @@ header .search-bar button {
   font-size: 0.75rem;
 }
 .container .wrapper .weather-forecast > div > p {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .container .wrapper .weather-forecast > div .warm {
   color: #ffe47a !important;
+  padding: 5px;
 }
 .container .wrapper .weather-forecast > div .cool {
   color: #3d7eaa;
+  padding: 5px;
 }
 .container .wrapper .weather-forecast > div .gradientHolder {
   width: 15px;
@@ -163,15 +166,18 @@ header .search-bar button {
 }
 .container main {
   background-color: rgba(0, 0, 0, 0.5);
-  margin-left: 10%;
+  margin-left: 25rem;
   font-size: 1.6rem;
   backdrop-filter: blur(2px);
+  height: 47%;
+  border-radius: 25px 25px 0 0;
 }
 .container main .headerToday {
   display: flex;
   align-items: center;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px 25px 0 0;
 }
 .container main .headerToday .icon-container {
   margin-left: 10px;
@@ -192,9 +198,10 @@ header .search-bar button {
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: 1fr 1fr;
   border: 1px solid black;
+  height: 81%;
 }
 .container main .side .weather-info span {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: lighter;
   white-space: normal;
 }
@@ -204,11 +211,13 @@ header .search-bar button {
   padding: 0 0 7px 0;
 }
 .container main .side > * {
-  width: 100%;
-  padding: 5px;
-  border: 0.2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
   text-align: center;
-  font-size: 2rem;
+  border: 0.2px solid black;
 }
 .container main:hover {
   transform: scale(1.05);

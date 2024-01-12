@@ -102,15 +102,17 @@ header {
   .wrapper {
     display: flex;
     align-items: center;
+    margin-left: auto;
     height: 100%;
+
     .weather-forecast {
       color: white;
       width: 100%;
       height: 100%;
       display: flex;
-      justify-content: center;
       align-items: center;
       gap: 25px;
+      margin-left: 5rem;
       .conditionIcon {
         width: 64px;
         height: 64px;
@@ -122,7 +124,7 @@ header {
     }
     .weather-forecast > div {
       width: 10%;
-      min-height: 47%;
+      height: 47%;
       background-color: $background-color;
       display: flex;
       flex-direction: column;
@@ -141,13 +143,15 @@ header {
         }
       }
       > p {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
       .warm {
         color: #ffe47a !important;
+        padding: 5px;
       }
       .cool {
         color: #3d7eaa;
+        padding: 5px;
       }
       .gradientHolder {
         width: 15px;
@@ -170,15 +174,19 @@ header {
   }
   main {
     background-color: $background-color;
-    margin-left: 10%;
+    margin-left: 25rem;
     font-size: 1.6rem;
     backdrop-filter: blur(2px);
+    height: 47%;
+    border-radius: 25px 25px 0 0;
 
     .headerToday {
       display: flex;
       align-items: center;
       text-align: center;
       background-color: $header-background-color;
+      border-radius: 25px 25px 0 0;
+
       .icon-container {
         margin-left: 10px;
       }
@@ -200,9 +208,10 @@ header {
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: 1fr 1fr;
       border: 1px solid black;
+      height: 81%;
 
       .weather-info span {
-        font-size: 13px;
+        font-size: 15px;
         font-weight: lighter;
         white-space: normal;
       }
@@ -213,11 +222,13 @@ header {
       }
     }
     .side > * {
-      width: 100%;
-      padding: 5px;
-      border: 0.2px solid black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3px;
       text-align: center;
-      font-size: 2rem;
+      border: 0.2px solid black;
     }
   }
   main:hover {
