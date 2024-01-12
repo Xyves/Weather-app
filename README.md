@@ -6,7 +6,7 @@
  <p align="center">
     Weather application used to show forecast from Weather API.
     <br />
-    <a href=""><strong>View Demo</strong></a>
+    <a href="https://xyves.github.io/Weather-app/"><strong>View Demo</strong></a>
   </p>
 
  ## Installation
