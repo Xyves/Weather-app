@@ -1,6 +1,8 @@
 
  <h1 align="center">Weather app</h3>
- ![screenshot](https://raw.github.com/Xyves/Weather-app/main/src/img/screenshot.png)
+ 
+[![screenshot](https://i.postimg.cc/br39DNSt/screenshot.png)](https://postimg.cc/GTTy6RQL)
+
  <p align="center">
     Weather application used to show forecast from Weather API.
     <br />
