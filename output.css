@@ -178,6 +178,7 @@ header .search-bar button {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 25px 25px 0 0;
+  height: 20%;
 }
 .container main .headerToday .icon-container {
   margin-left: 10px;
@@ -198,7 +199,7 @@ header .search-bar button {
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: 1fr 1fr;
   border: 1px solid black;
-  height: 81%;
+  height: 80%;
 }
 .container main .side .weather-info span {
   font-size: 15px;
