@@ -1,5 +1,5 @@
 
- <h1 align="center">Weather app</h3>
+ <h1 align="center">Weather app</h1>
  
 [![screenshot](https://i.postimg.cc/br39DNSt/screenshot.png)](https://postimg.cc/GTTy6RQL)
 
