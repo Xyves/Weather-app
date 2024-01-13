@@ -18,25 +18,19 @@ To set up the Application locally, follow these steps:
    ```bash
    git clone https://github.com/Xyves/Weather-app.git
    ```
-
-2. Navigate to the project's directory:
-
-   ```bash
-   cd weatherwise
-   ```
-
-3. Install the project's dependencies using npm:
+   
+2. Install the project's dependencies using npm:
 
    ```bash
    npm install
    ```
 
-4. Build the project to bundle JavaScript:
+3. Build the project to bundle JavaScript:
 
    ```bash
    npm run build
    ```
-5. The build files can be found on `dist` (distribution) directory.
+4. The build files can be found on `dist` (distribution) directory.
 
 <br>
 
