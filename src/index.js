@@ -113,7 +113,7 @@ function changeCityTitle(address, addressWeather) {
   }
 }
 function changeCityApi(value) {
-  const url = `https://api.weatherapi.com/v1/forecast.json?key=k%L8jk%7NF&q=${value}&days=6`;
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=2efc8e5e595846e0ab3165512241601&q=${value}&days=6`;
 
   return fetch(url)
     .then((response) => {
