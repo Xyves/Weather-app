@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // Retrieves and renders the images from pexels api
 function RenderImages() {}
-const apikey = "563492ad6f917000010000019b983f3b62fe43daa92e746d4553dd35";
+const apikey = "2247caac00084554a6f65506252405";
 fetch("https://api.pexels.com/v1/search?query=nature+landscape&per_page=20  ", {
   method: "GET",
   headers: {
